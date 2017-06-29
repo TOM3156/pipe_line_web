@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Automatical Scoring</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../static/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="../static/stylesheet" href="assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body class="subpage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="{{ url_for('select_app') }}" id="logo">Review Automatic Scoring</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="{{ url_for('select_app') }}">Homepage</a>
+										<a href="{{ url_for('detail_app', id=1) }}">Smart News</a>
+									  	<a href="{{ url_for('detail_app', id=2) }}">Yahoo!</a>
+										<a href="{{ url_for('detail_app', id=3) }}">Gunosy</a>
+									  	<a href="{{ url_for('detail_app', id=4) }}">News Pass</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+				</div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="9u 12u(mobile)">
+
+									<!-- Main Content -->
+										<section>
+						  {% for app in apps %}
+											<header>
+												<h2>{{ app.name }}</h2>
+												<h3><img src="{{ app.pic }}" alt=""></h3>
+											</header>
+											<div id="appListMain">
+								  <table border="5" rules="all" class="tableLeft">
+									  <tr>
+										 <th bgcolor="#e3f0fb">総合レート</th>
+										 <td>{{ app.rate }}</td>
+									  </tr>
+									  <tr>
+										 <th bgcolor="#e3f0fb">総レビュー数</th>
+										 <td>{{ app.num_review }}</td>
+									  </tr>
+								  </table>
+									<br>
+								  <table border=1 height="260" class="tableRight">
+									   <tr>
+										  <th bgcolor="#e3f0fb">評価項目</th>
+										  <th bgcolor="#e3f0fb">レート</th>
+										   <th bgcolor="#e3f0fb">レビュー数</th>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">広告</th>
+										  <td>{{ app.ad }}</td>
+										   <td>{{ app.num_ad }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">記事</th>
+										  <td>{{ app.article }}</td>
+										   <td>{{ app.num_article }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">クラッシュ</th>
+										  <td>{{ app.crash }}</td>
+										   <td>{{ app.num_crash }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">デザイン</th>
+										  <td>{{ app.design }}</td>
+										   <td>{{ app.num_design }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">評価</th>
+										  <td>{{ app.fav }}</td>
+										   <td>{{ app.num_fav }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">機能</th>
+										  <td>{{ app.func }}</td>
+										   <td>{{ app.num_func }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">通信量</th>
+										  <td>{{ app.traffic }}</td>
+										   <td>{{ app.num_traffic }}</td>
+									   </tr>
+									   <tr>
+										  <th bgcolor="#e3f0fb">便利さ</th>
+										  <td>{{ app.useful }}</td>
+										   <td>{{ app.num_useful }}</td>
+									   </tr>
+								   </table>
+						  {% endfor %}
+							<br><br>
+					 	<h2>Review List</h2>
+						<div id="reviewList">
+						<div id="reviewListTable">
+						{% for entry in entries %}
+						<div class="reviewListMain">
+						  <table border="5" rules="all">
+							  <tr>
+								  <td>
+									  <table>
+											<tr>
+												<th bgcolor="#e3f0fb">総合レート</th>
+												<td>{{ entry.rate }}</td>
+											  </tr>
+											  <tr>
+												<th bgcolor="#e3f0fb">日付</th>
+												<td>{{ entry.date }}</td>
+											  </tr>
+										</table>
+								  </td>
+								  <td rowspan="2">
+									<table border=1 width="650" height=275>
+									  <tr>
+										<th bgcolor="#e3f0fb">タイトル</th>
+										<td>{{ entry.title }}</td>
+									  </tr>
+										<tr>
+										<th bgcolor="#e3f0fb" width="100">レビュー本文</th>
+										<td width="550">{{ entry.review}}</td>
+									  </tr>
+									</table>
+								  </td>
+							  </tr>
+							  <tr>
+							  <td>
+								<table border=1 width="200" height=275>
+								  <tr>
+									 <th bgcolor="#e3f0fb">評価項目</th>
+									 <th bgcolor="#e3f0fb">レート</th>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">広告</th>
+									 <td>{{ entry.ad }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">記事</th>
+									 <td>{{ entry.article }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">クラッシュ</th>
+									 <td>{{ entry.crash }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">デザイン</th>
+									 <td>{{ entry.design }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">評価</th>
+									 <td>{{ entry.fav }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">機能</th>
+									 <td>{{ entry.func }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">通信量</th>
+									 <td>{{ entry.traffic }}</td>
+								  </tr>
+								  <tr>
+									 <th bgcolor="#e3f0fb">便利さ</th>
+									 <td>{{ entry.useful }}</td>
+								  </tr>
+								</table>
+							  </td>
+							</tr>
+						  </table>
+						</div>
+							<br>
+						{% endfor %}
+						</div>
+						</div>
+						</div>
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Sidebar -->
+										<section>
+											<header>
+												<h2>レビューの<br>絞り込み</h2>
+                                                <h3>自分が重要と思う項目について言及されたレビューのみ閲覧することができます。</h3>
+											</header>
+											{% for app in apps %}
+												  {% if app.id == 1 %}
+												<nav>
+													<ul>
+														<li><a href="{{ url_for('detail_app', id=1) }}">全体</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='ad') }}">広告</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='article') }}">記事</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='crash') }}">クラッシュ</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='design') }}">デザイン</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='fav') }}">評価</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='func') }}">機能</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='traffic') }}">通信量</a></li>
+														<li><a href="{{ url_for('select_review', app_id=1, eval='useful') }}">便利さ</a></li>
+													</ul>
+												</nav>
+											{% elif app.id == 2 %}
+												<nav>
+													<ul>
+														<li><a href="{{ url_for('detail_app', id=2) }}">全体</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='ad') }}">広告</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='article') }}">記事</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='crash') }}">クラッシュ</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='design') }}">デザイン</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='fav') }}">評価</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='func') }}">機能</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='traffic') }}">通信量</a></li>
+														<li><a href="{{ url_for('select_review', app_id=2, eval='useful') }}">便利さ</a></li>
+													</ul>
+												</nav>
+											{% elif app.id == 3 %}
+												<nav>
+													<ul>
+														<li><a href="{{ url_for('detail_app', id=3) }}">全体</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='ad') }}">広告</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='article') }}">記事</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='crash') }}">クラッシュ</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='design') }}">デザイン</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='fav') }}">評価</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='func') }}">機能</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='traffic') }}">通信量</a></li>
+														<li><a href="{{ url_for('select_review', app_id=3, eval='useful') }}">便利さ</a></li>
+													</ul>
+												</nav>
+											{% elif app.id == 4 %}
+												<nav>
+													<ul>
+														<li><a href="{{ url_for('detail_app', id=4) }}">全体</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='ad') }}">広告</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='article') }}">記事</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='crash') }}">クラッシュ</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='design') }}">デザイン</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='fav') }}">評価</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='func') }}">機能</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='traffic') }}">通信量</a></li>
+														<li><a href="{{ url_for('select_review', app_id=4, eval='useful') }}">便利さ</a></li>
+													</ul>
+												</nav>
+											{% endif %}
+											{% endfor %}
+										</section>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../static/assets/js/jquery.min.js"></script>
+			<script src="../static/assets/js/skel.min.js"></script>
+			<script src="../static/assets/js/skel-viewport.min.js"></script>
+			<script src="../static/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../static/assets/js/main.js"></script>
+
+	</body>
+</html>

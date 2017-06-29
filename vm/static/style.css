@@ -1,0 +1,192 @@
+body {
+  font-family: sans-serif;
+}
+
+/*ページ*/
+#page {
+    width: 980px;
+    margin: 0 auto;
+    border: 5px solid #CCCCCC;
+    background: white;
+}
+
+/*ページヘッダー*/
+#pageHead #siteTitle {
+  font-size: 30px;
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+
+#pageHead #catchcopy {
+  font-size: 12px;
+  line-height: 1.5;
+  margin-top: 5px;
+}
+
+/*グローバルナビ*/
+#pageHead .globalNavi {
+  border: solid #CCCCCC;
+  border-width: 1px 0;
+  padding: 10px 0;
+}
+#pageHead .globalNavi ul {
+  margin: 0;
+  padding: 0;
+}
+#pageHead .globalNavi ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#pageHead .globalNavi ul li {
+  list-style: none;
+  width: 196px;
+  float: left;
+  border-left: solid 1px #CCCCCC;
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.429;
+}
+#pageHead .globalNavi ul li:first-child {
+  border-left: none;
+}
+#pageHead .globalNavi ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+#pageHead .globalNavi ul li a:hover{
+  background-color: #F2F2E5;
+}
+
+/*レビューの絞り込み*/
+#reviewList .target {
+  border: solid #CCCCCC;
+  border-width: 1px 0;
+  padding: 10px 0;
+}
+#reviewList .target ul {
+  margin: 2px;
+  padding: 0;
+}
+#reviewList .target ul:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+#reviewList .target ul li {
+  list-style: none;
+  width: 179px;
+  float: left;
+  border-left: solid 1px #CCCCCC;
+  border-top: solid 1px #CCCCCC;
+  border-bottom: solid 1px #CCCCCC;
+  padding: 0 10px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.429;
+}
+#reviewList .target ul li:first-child {
+  border-left: none;
+}
+#reviewList .target ul li a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  padding: 5px 0;
+}
+#reviewList .target ul li a:hover{
+  background-color: #F2F2E5;
+}
+
+/*ページフッター*/
+#pageFoot {
+  border-top: solid 1px #CCCCCC;
+  margin-top: 15px;
+}
+
+#pageFoot #copyright small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/*ページボディ*/
+#appList {
+  margin-top: 30px;
+}
+#appList:after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+#appListMain {
+  width: 720px;
+  float: left;
+}
+
+#appListSub {
+  width: 220px;
+  float: right;
+}
+
+/*レビュー一覧*/
+#reviewList {
+  margin-top: 30px;
+  height: 600px;
+  overflow: scroll;
+}
+#reviewListTable {
+  height: 600px;
+  overflow: scroll;
+}
+.reviewListMain {
+  margin-bottom: 15px;
+}
+
+
+/*表*/
+#appList table {
+  font-size: 14px;
+  line-height: 1.429;
+  border: 1px solid #CCCCCC;
+  width: 100%;
+}
+
+#appList table th,
+#appList table td {
+  border: 1px solid #CCCCCC;
+  padding: 5px 10px;
+}
+
+/*見出し*/
+#appListMain .pageTitle {
+  font-size: 26px;
+  background-color: #F2F2E5;
+  padding: 5px 15px;
+  line-height: 1.231;
+  margin-top: 0;
+}
+
+
+/*区切り線・余白*/
+#appListMain .articleDetailHead {
+  border-bottom: solid 1px #CCCCCC;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+#appListMain .articleDetailBody section{
+  margin: 30px 0;
+}
+.flash          { background: #cee5F5; padding: 0.5em;
+                  border: 1px solid #aacbe2; }
+
+a, h1, h2       { color: #377ba8; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }

@@ -1,0 +1,321 @@
+<!DOCTYPE HTML>
+<!--
+	Halcyonic by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Automatic Scoring</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="../../static/assets/js/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="../../static/assets/css/main.css" />
+		<!--[if lte IE 9]><link rel="stylesheet" href="../../static/assets/css/ie9.css" /><![endif]-->
+	</head>
+	<body>
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+						<div class="row">
+							<div class="12u">
+
+								<!-- Logo -->
+									<h1><a href="{{ url_for('select_app') }}" id="logo">Review Automatic Scoring</a></h1>
+
+								<!-- Nav -->
+									<nav id="nav">
+										<a href="{{ url_for('select_app') }}">Homepage</a>
+										<a href="{{ url_for('detail_app', id=1) }}">Smart News</a>
+									  	<a href="{{ url_for('detail_app', id=2) }}">Yahoo!</a>
+										<a href="{{ url_for('detail_app', id=3) }}">Gunosy</a>
+									  	<a href="{{ url_for('detail_app', id=4) }}">News Pass</a>
+									</nav>
+
+							</div>
+						</div>
+					</header>
+					<div id="banner">
+						<div class="container">
+							<div class="row">
+								<div class="6u 12u(mobile)">
+
+									<!-- Banner Copy -->
+										<p>4つのニュース閲覧アプリの<br>ユーザレビューを8つの評価項目に自動でスコアリングした結果を閲覧できるウェブサイトです。</p>
+
+
+								</div>
+								<div class="6u 12u(mobile)">
+
+									<!-- Banner Image -->
+										<a href="#" class="bordered-feature-image"><img width="500" height="300" src="../../static/images/icon.jpg" alt="" /></a>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Features -->
+				<div id="features-wrapper">
+					<div id="features">
+						<div class="container">
+							<div class="row">
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #1 -->
+										<section>
+											<a href="{{ url_for('detail_app', id=1) }}" class="bordered-feature-image"><img src="../../static/images/smartnews.png" alt="" /></a>
+											<h2>Smart News</h2>
+											{% for app in apps %}
+										  		{% if app.id == 1 %}
+                                                  <table border=1 class="tableLeft">
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総合レート</th>
+                                                         <td>{{ app.rate }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総レビュー数</th>
+                                                         <td>{{ app.num_review }}</td>
+                                                      </tr>
+                                                  </table>
+                                                        <br>
+                                                  <table border=1 height="100" class="tableRight">
+                                                       <tr>
+                                                          <th bgcolor="#e3f0fb">評価項目</th>
+                                                          <th bgcolor="#e3f0fb">レート</th>
+                                                           <th bgcolor="#e3f0fb">レビュー数</th>
+                                                       </tr>
+                                                       <tr>
+
+                                                          <th bgcolor="#e3f0fb">{{ title }}</th>
+                                                          <td>{{ app.eval }}</td>
+                                                           <td>{{ app.num_eval }}</td>
+                                                       </tr>
+                                                   </table>
+												{% endif %}
+											{% endfor %}
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #2 -->
+										<section>
+											<a href="{{ url_for('detail_app', id=2) }}" class="bordered-feature-image"><img src="../../static/images/yahoo.png" alt="" /></a>
+											<h2>Yahoo!</h2>
+											{% for app in apps %}
+										  		{% if app.id == 2 %}
+                                                  <table border=1 class="tableLeft">
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総合レート</th>
+                                                         <td>{{ app.rate }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総レビュー数</th>
+                                                         <td>{{ app.num_review }}</td>
+                                                      </tr>
+                                                  </table>
+                                                        <br>
+                                                  <table border=1 height="100" class="tableRight">
+                                                       <tr>
+                                                          <th bgcolor="#e3f0fb">評価項目</th>
+                                                          <th bgcolor="#e3f0fb">レート</th>
+                                                           <th bgcolor="#e3f0fb">レビュー数</th>
+                                                       </tr>
+                                                       <tr>
+
+                                                          <th bgcolor="#e3f0fb">{{ title }}</th>
+                                                          <td>{{ app.eval }}</td>
+                                                           <td>{{ app.num_eval }}</td>
+                                                       </tr>
+                                                   </table>
+												{% endif %}
+											{% endfor %}
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #3 -->
+										<section>
+											<a href="{{ url_for('detail_app', id=3) }}" class="bordered-feature-image"><img src="../../static/images/gunosy.png" alt="" /></a>
+											<h2>Gunosy</h2>
+											{% for app in apps %}
+										  		{% if app.id == 3 %}
+                                                  <table border=1 class="tableLeft">
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総合レート</th>
+                                                         <td>{{ app.rate }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総レビュー数</th>
+                                                         <td>{{ app.num_review }}</td>
+                                                      </tr>
+                                                  </table>
+                                                        <br>
+                                                  <table border=1 height="100" class="tableRight">
+                                                       <tr>
+                                                          <th bgcolor="#e3f0fb">評価項目</th>
+                                                          <th bgcolor="#e3f0fb">レート</th>
+                                                           <th bgcolor="#e3f0fb">レビュー数</th>
+                                                       </tr>
+                                                       <tr>
+
+                                                          <th bgcolor="#e3f0fb">{{ title }}</th>
+                                                          <td>{{ app.eval }}</td>
+                                                           <td>{{ app.num_eval }}</td>
+                                                       </tr>
+                                                   </table>
+												{% endif %}
+											{% endfor %}
+										</section>
+
+								</div>
+								<div class="3u 12u(mobile)">
+
+									<!-- Feature #4 -->
+										<section>
+											<a href="{{ url_for('detail_app', id=4) }}" class="bordered-feature-image"><img src="../../static/images/newspass.png" alt="" /></a>
+											<h2>News Pass</h2>
+											{% for app in apps %}
+										  		{% if app.id == 4 %}
+                                                  <table border=1 class="tableLeft">
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総合レート</th>
+                                                         <td>{{ app.rate }}</td>
+                                                      </tr>
+                                                      <tr>
+                                                         <th bgcolor="#e3f0fb">総レビュー数</th>
+                                                         <td>{{ app.num_review }}</td>
+                                                      </tr>
+                                                  </table>
+                                                        <br>
+                                                  <table border=1 height="100" class="tableRight">
+                                                       <tr>
+                                                          <th bgcolor="#e3f0fb">評価項目</th>
+                                                          <th bgcolor="#e3f0fb">レート</th>
+                                                           <th bgcolor="#e3f0fb">レビュー数</th>
+                                                       </tr>
+                                                       <tr>
+
+                                                          <th bgcolor="#e3f0fb">{{ title }}</th>
+                                                          <td>{{ app.eval }}</td>
+                                                           <td>{{ app.num_eval }}</td>
+                                                       </tr>
+                                                   </table>
+												{% endif %}
+											{% endfor %}
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Content -->
+				<div id="content-wrapper">
+					<div id="content">
+						<div class="container">
+							<div class="row">
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #1 -->
+										<section>
+											<header>
+												<h2>Profile</h2>
+												<h3>平野智久</h3>
+											</header>
+											<a href="#" class="feature-image"><img src="../../static/images/prof.jpg" alt="" /></a>
+											<ul class="check-list">
+                                                <li>所属大学院：<br>慶應義塾大学大学院<br>メディアデザイン研究科</li>
+                                                <li>所属プロジェクト：<br>Embodied Media</li>
+                                                <li>バックグラウンド：<br>ソフトウェア工学</li>
+                                                <li>スポーツ：<br>陸上（800m, 1500m）</li>
+                                                <li>音楽：<br>EXILE TRIBE, 三代目J Soul Brothers</li>
+      										</ul>
+										</section>
+
+								</div>
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #2 -->
+										<section>
+											<header>
+												<h2>評価項目ごとの比較</h2>
+												<h3>重要視する機能の点数で比較が可能です。</h3>
+											</header>
+											<ul class="check-list">
+                                                <li><a href="{{ url_for('select_app') }}">全体</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=5, eval_id=6) }}">広告</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=7, eval_id=7) }}">記事</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=9, eval_id=8) }}">クラッシュ</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=11, eval_id=9) }}">デザイン</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=13, eval_id=10) }}">評価</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=15, eval_id=11) }}">機能</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=17, eval_id=12) }}">通信量</a></li>
+                                                <li><a href="{{ url_for('compare_app', app_id=19, eval_id=13) }}">便利さ</a></li>
+      										</ul>
+										</section>
+
+								</div>
+								<div class="4u 12u(mobile)">
+
+									<!-- Box #3 -->
+										<section>
+											<header>
+												<h2>アプリ一覧</h2>
+												<h3>本ウェブサイトでは以下の４つのアプリをスコアリング対象として設定しています。</h3>
+											</header>
+											<ul class="quote-list">
+												<li>
+													<a href="{{ url_for('detail_app', id=1) }}"><img width="70" height="70" src="../../static/images/smartnews.png" alt="" /></a>
+													<p>Smart News</p>
+												</li>
+												<li>
+													<a href="{{ url_for('detail_app', id=2) }}"><img  width="70" height="70" src="../../static/images/yahoo.png" alt="" /></a>
+													<p>Yahoo!</p>
+												</li>
+												<li>
+													<a href="{{ url_for('detail_app', id=3) }}"><img width="70" height="70" src="../../static/images/gunosy.png" alt="" /></a>
+													<p>Smart News</p>
+												</li>
+												<li>
+													<a href="{{ url_for('detail_app', id=4) }}"><img width="70" height="70" src="../../static/images/newspass.png" alt="" /></a>
+													<p>News Pass</p>
+												</li>
+											</ul>
+										</section>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+
+			<!-- Footer -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="8u 12u(mobile)">
+			<!-- Copyright -->
+				<div id="copyright">
+					&copy; Untitled. All rights reserved. | Design: <a href="http://html5up.net">HTML5 UP</a>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="../../static/assets/js/jquery.min.js"></script>
+			<script src="../../static/assets/js/skel.min.js"></script>
+			<script src="../../static/assets/js/skel-viewport.min.js"></script>
+			<script src="../../static/assets/js/util.js"></script>
+			<!--[if lte IE 8]><script src="../../static/assets/js/ie/respond.min.js"></script><![endif]-->
+			<script src="../../static/assets/js/main.js"></script>
+
+	</body>
+</html>
